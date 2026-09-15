@@ -1,0 +1,13 @@
+/* The default static state */
+.build-panel {
+    transform-origin: center;
+    /* Animate position change over 0.5 seconds with an ease-out curve */
+    transition-property: translate;
+    transition-duration: 0.5s;
+    transition-timing-function: ease-out;
+}
+
+/* The state where the component has shifted right and down */
+.build-panel-shifted {
+    translate: 100px 50px;
+}
