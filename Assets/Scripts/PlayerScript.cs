@@ -7,7 +7,7 @@ public class PlayerScript : MonoBehaviour
     public Camera cam;
     public GameObject point;
 
-    private void OnMousePos(InputValue value) // Gets mouse position in 3d space. moves point object to that position
+    public void OnMousePos(InputValue value) // Gets mouse position in 3d space. moves point object to that position
     {
         
         
@@ -23,4 +23,20 @@ public class PlayerScript : MonoBehaviour
 
         }    
     }
+
+    public void OnRightClick(InputValue value)
+    {
+        Debug.Log(value.Get<float>());
+    }
+
+    public void OnPlaceMode(InputValue value)
+    {
+
+    }
+
+    public void OnLeftClick(InputValue value)
+    {
+
+    }
+
 }
