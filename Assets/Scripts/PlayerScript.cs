@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,6 +7,8 @@ public class PlayerScript : MonoBehaviour
 
     public Camera cam;
     public GameObject point;
+
+    [SerializeField] GameObject tower;
 
     public void OnMousePos(InputValue value) // Gets mouse position in 3d space. moves point object to that position
     {
@@ -34,9 +37,9 @@ public class PlayerScript : MonoBehaviour
 
     }
 
-    public void OnLeftClick(InputValue value)
+    public void OnPlace(InputValue value)
     {
-
+        Instantiate<GameObject>(tower, point.transform.position, point.transform.rotation);
     }
 
 }
