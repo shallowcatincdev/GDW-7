@@ -72,6 +72,12 @@
       },
       "url": "https://packages.unity.com"
     },
+    "com.unity.mathematics": {
+      "version": "1.4.0",
+      "depth": 1,
+      "source": "builtin",
+      "dependencies": {}
+    },
     "com.unity.nuget.mono-cecil": {
       "version": "1.11.6",
       "depth": 3,
@@ -122,6 +128,13 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+    "com.unity.settings-manager": {
+      "version": "2.1.1",
+      "depth": 1,
+      "source": "registry",
+      "dependencies": {},
+      "url": "https://packages.unity.com"
+    },
     "com.unity.shadergraph": {
       "version": "17.6.0",
       "depth": 1,
@@ -130,6 +143,16 @@
         "com.unity.render-pipelines.core": "17.6.0",
         "com.unity.searcher": "4.9.3",
         "com.unity.graph-authoring": "1.0.0"
+      }
+    },
+    "com.unity.splines": {
+      "version": "file:com.unity.splines",
+      "depth": 0,
+      "source": "embedded",
+      "dependencies": {
+        "com.unity.settings-manager": "1.0.3",
+        "com.unity.mathematics": "1.2.1",
+        "com.unity.modules.imgui": "1.0.0"
       }
     },
     "com.unity.test-framework": {
