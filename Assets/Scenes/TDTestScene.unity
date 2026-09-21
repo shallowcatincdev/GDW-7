@@ -221,9 +221,9 @@ GameObject:
   - component: {fileID: 252870679}
   - component: {fileID: 252870678}
   - component: {fileID: 252870677}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: Ground
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -334,7 +334,7 @@ GameObject:
   - component: {fileID: 650113283}
   m_Layer: 0
   m_Name: Point
-  m_TagString: Untagged
+  m_TagString: Point
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -346,7 +346,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 650113281}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1
@@ -594,7 +594,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   cam: {fileID: 909530300}
   point: {fileID: 650113281}
-  tower: {fileID: 7940479030018601354, guid: c35cbd71eea027f4fa38b91fec716061, type: 3}
+  towers:
+  - {fileID: 7940479030018601354, guid: c35cbd71eea027f4fa38b91fec716061, type: 3}
+  - {fileID: 7940479030018601354, guid: f9e2266d5fb0a2c408e7f0eba21238be, type: 3}
+  goodMat: {fileID: 2100000, guid: be7e7cf9a402e584cbc75ee5ad26ea1b, type: 2}
+  badMat: {fileID: 2100000, guid: 7bbaec2f935ae634cb24c144595c3112, type: 2}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 8
 --- !u!1 &1907015058
 GameObject:
   m_ObjectHideFlags: 0
@@ -607,7 +614,7 @@ GameObject:
   - component: {fileID: 1907015061}
   - component: {fileID: 1907015060}
   - component: {fileID: 1907015059}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Floor
   m_TagString: Ground
   m_Icon: {fileID: 0}

@@ -8,7 +8,21 @@ public class PlayerScript : MonoBehaviour
     public Camera cam;
     public GameObject point;
 
-    [SerializeField] GameObject tower;
+    [SerializeField] GameObject[] towers;
+
+    [SerializeField] Material goodMat;
+    [SerializeField] Material badMat;
+    [SerializeField] LayerMask groundLayer;
+    GameObject towerTemp;
+
+    int activeTower = 0;
+
+
+
+    private void Start()
+    {
+        SpawnTowerTemp();
+    }
 
     public void OnMousePos(InputValue value) // Gets mouse position in 3d space. moves point object to that position
     {
@@ -16,15 +30,25 @@ public class PlayerScript : MonoBehaviour
         
         Ray ray = cam.ScreenPointToRay(value.Get<Vector2>());
         RaycastHit hit;
-        if (Physics.Raycast(ray, out hit))
+        
+
+        if (Physics.Raycast(ray, out hit, 100, groundLayer))
         {
             Debug.DrawLine(transform.position, hit.point);
         }
-        point.transform.position = hit.point;
+        
         if (hit.transform == null)
         {
 
-        }    
+        }
+        else if (hit.transform.gameObject.CompareTag("Ground"))
+        {
+            point.transform.position = hit.point;
+        }
+        else
+        {
+            
+        }
     }
 
     public void OnRightClick(InputValue value)
@@ -34,12 +58,37 @@ public class PlayerScript : MonoBehaviour
 
     public void OnPlaceMode(InputValue value)
     {
+        activeTower++;
+        if (activeTower >= towers.Length)
+        {
+            activeTower = 0;
+        }
 
+        SpawnTowerTemp();
     }
 
     public void OnPlace(InputValue value)
     {
-        Instantiate<GameObject>(tower, point.transform.position, point.transform.rotation);
+        if (towerTemp.GetComponent<TowerScript>().CanPlace())
+        {
+            Instantiate<GameObject>(towers[activeTower], towerTemp.transform.position, towerTemp.transform.rotation);
+        }
+        
     }
 
+
+    void SpawnTowerTemp()
+    {
+        if (towerTemp != null)
+        {
+            Destroy(towerTemp);
+            towerTemp = null;
+        }
+
+        towerTemp = Instantiate<GameObject>(towers[activeTower], point.transform);
+        towerTemp.GetComponent<TowerScript>().SetPlacementMode(true);
+
+    }
+
+    
 }
