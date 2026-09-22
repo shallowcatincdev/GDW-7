@@ -32,17 +32,17 @@
                     "id": "54cb296a-8309-4189-824b-25ab74952a01",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false,
                     "priority": 0
                 },
                 {
-                    "name": "LeftClick",
+                    "name": "Place",
                     "type": "Button",
                     "id": "148d3dd6-f518-4f0b-8c48-c87c74ec6606",
                     "expectedControlType": "",
                     "processors": "",
-                    "interactions": "",
+                    "interactions": "Press",
                     "initialStateCheck": false,
                     "priority": 0
                 }
@@ -88,7 +88,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": ";Keyboard&Mouse",
-                    "action": "LeftClick",
+                    "action": "Place",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
