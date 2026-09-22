@@ -76,6 +76,10 @@ public class PlayerScript : MonoBehaviour
         
     }
 
+    public void OnRotate(InputValue value)
+    {
+        point.transform.Rotate(new Vector3(0, 90, 0));
+    }
 
     void SpawnTowerTemp()
     {
